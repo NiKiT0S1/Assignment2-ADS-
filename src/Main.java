@@ -1,27 +1,54 @@
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String [] args) {
-        MyArrayList myArrayList = new MyArrayList();
+    public static void main(String[] args) {
+        // Create an instance of MyArrayList
+        MyArrayList<String> myList = new MyArrayList<>();
 
-        ArrayList arrayList = new ArrayList();
+        // Add elements to the list
+        myList.add("Apple");
+        myList.add("Banana");
+        myList.add("Cherry");
+        myList.add("Date");
 
+        // Print all elements using iterator
+        System.out.println("List contents:");
+        for (String fruit : myList) {
+            System.out.println(fruit);
+        }
 
-        myArrayList.addElement(11.5);
-        myArrayList.addElement(10);
-        myArrayList.addElement(9);
-        myArrayList.addElement(8.7);
-        myArrayList.addElement(7);
-        myArrayList.addElement(6);
-        System.out.println("Value of element by index 3: " + myArrayList.getElement(3));
-        myArrayList.addElement(20,3);
-        System.out.println("Value of element by index 3 after addding new value: " + myArrayList.getElement(3));
+        // Get and print an element from the list
+        System.out.println("\nElement at index 2: " + myList.get(2));
 
-        System.out.println("Size of myArrayList: " + myArrayList.getSize());
-        myArrayList.removeElement(3);
-        System.out.println("Size of myArrayList after removing: " + myArrayList.getSize());
-        System.out.println("Value of index 3  after removing: " + myArrayList.getElement(3));
-        myArrayList.clear();
-        System.out.println("Size of myArrayList after clear: " + myArrayList.getSize());
+        // Remove an element from the list
+        myList.remove(1); // Removes "Banana"
+        System.out.println("\nAfter removing element at index 1:");
+
+        // Print all elements using iterator
+        for (String fruit : myList) {
+            System.out.println(fruit);
+        }
+
+        // Add an element at the first position
+        myList.addFirst("Apricot");
+        System.out.println("\nAfter adding 'Apricot' at the first position:");
+
+        // Print all elements using iterator
+        for (String fruit : myList) {
+            System.out.println(fruit);
+        }
+
+        // Remove the last element
+        myList.removeLast();
+        System.out.println("\nAfter removing the last element:");
+
+        // Print all elements using iterator
+        for (String fruit : myList) {
+            System.out.println(fruit);
+        }
+
+        // Clear the list
+        myList.clear();
+        System.out.println("\nAfter clearing the list, size: " + myList.size());
     }
 }
