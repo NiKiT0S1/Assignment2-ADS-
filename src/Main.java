@@ -74,7 +74,7 @@ public class Main {
             System.out.println(fruit);
         }
 
-        myList.sort();
+//        myList.sort();
 
 //        myList.size();
 
